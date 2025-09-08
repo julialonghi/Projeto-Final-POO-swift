@@ -5,12 +5,12 @@
 import PackageDescription
 
 let package = Package(
-    name: "PreparandoAmbiente", // Aqui você deve alterar para o nome do seu repositorio
+    name: "Projeto-Final-POO-swift", // Aqui você deve alterar para o nome do seu repositorio
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .executableTarget(
-            name: "Aula_1"
+            name: "Projeto"
         ),
         .executableTarget(
             name: "Aula_2"
