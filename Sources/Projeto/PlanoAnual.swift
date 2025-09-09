@@ -1,8 +1,8 @@
 import Foundation 
 
 class PlanoAnual: Plano {
-    override init(nomePlano: String) {
-        super.init(nomePlano: "Plano Anual (Promocional)")
+    override init(nome: String) {
+        super.init(nome: "Plano Anual (Promocional)")
     }
 
     override func calcularMensalidade() -> Double {
