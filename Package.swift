@@ -12,18 +12,6 @@ let package = Package(
         .executableTarget(
             name: "Projeto"
         ),
-        .executableTarget(
-            name: "Aula_2"
-        ),
-        .executableTarget(
-            name: "Aula_3"
-        ),
-        .executableTarget(
-            name: "Aula_4"
-        ),
-        .executableTarget(
-            name: "Aula_5"
-        ),
     ]
 )
 
