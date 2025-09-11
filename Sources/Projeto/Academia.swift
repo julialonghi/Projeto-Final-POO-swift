@@ -24,14 +24,14 @@ class Academia {
     }
 
     func contratarInstrutor(_ instrutor: Instrutor) {
-        instrutoresContratados [instrutor.email] = instrutor
+        instrutoresContratados[instrutor.email] = instrutor
     }
 
     func matricularAluno(_ aluno: Aluno) {
         if (alunosMatriculados.keys.contains(aluno.matricula)) {
             print("Erro: Aluno com a matrícula \(aluno.matricula) já existe")
         } else {
-            alunosMatriculados [aluno.matricula] = aluno
+            alunosMatriculados[aluno.matricula] = aluno
             print("Aluno adicionado com sucesso!")
         }
     }
@@ -43,7 +43,11 @@ class Academia {
     }
 
     func buscarAluno(porMatricula matricula: String) -> Aluno? {
-        
+        if (alunosMatriculados.keys.contains(aluno.matricula)) {
+            return alunosMatriculados[matricula]
+        } else {
+            return nil
+        }
     }
 
     func listarAlunos() {
@@ -51,7 +55,22 @@ class Academia {
         if (alunosMatriculados.isEmpty) {
             print("Nenhum aluno matriculado")
         } else {
-
+            let listaOrdenada = alunosMatriculados.values.sorted {$0.nome < $1.nome}
+            for aluno in listaOrdenada {
+                print(aluno.getDescricao())
         }
+        print("------------------------------------")
+    }
+
+    func listarAulas() {
+        print("--- Lista de Aulas ---")
+        if (aulasDisponiveis.isEmpty) {
+            print("Nenhuma aula disponível.")
+        } else {
+            for aula in aulasDisponiveis {
+                print(aula.getDescricao())
+            }
+        }
+        print("----------------------")
     }
 }
