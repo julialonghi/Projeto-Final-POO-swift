@@ -2,12 +2,13 @@ import Foundation
 
 class Aluno: Pessoa {
     var matricula: String
-    var nivel: NivelAluno
+    var nivel: NivelAluno = NivelAluno.iniciante
     private (set) var plano: Plano
 
     init(nome: String, email: String, matricula: String, nivel: NivelAluno, plano: Plano) {
         self.matricula = matricula 
-        self.nivel = .iniciante
+        self.nivel = nivel
+        self.plano = plano
         super.init(nome: nome, email: email)
     }
 

@@ -2,25 +2,21 @@ import Foundation
 
 class Academia {
     private let nome: String
-    private var alunosMatriculados: [String: Aluno]
-    private var instrutoresContratados: [String: Instrutor]
-    private var aparelhos: Aparelho([Aparelho])
-    private var aulasDisponiveis: Aula([Aula])
+    private var alunosMatriculados: [String: Aluno] = [:]
+    private var instrutoresContratados: [String: Instrutor] = [:]
+    private var aparelhos: [Aparelho] = []
+    private var aulasDisponiveis: [Aula] = []
 
-    init(nome: String, alunosMatriculados: [String: Aluno], instrutoresContratados: [String: Instrutor], aparelhos: Aparelho([Aparelho]), aulasDisponiveis: Aula([Aula])) {
+    init(nome: String) {
         self.nome = nome
-        self.alunosMatriculados = alunosMatriculados
-        self.instrutoresContratados = instrutoresContratados
-        self.aparelhos = aparelhos
-        self.aulasDisponiveis = aulasDisponiveis
     }
 
     func adicionarAparelho(_ aparelho: Aparelho) {
-        aparelhos.append(Aparelho.nomeItem)
+        aparelhos.append(aparelho)
     }
 
     func adicionarAula(_ aula: Aula) {
-        aulasDisponiveis.append(Aula.nome)
+        aulasDisponiveis.append(aula)
     }
 
     func contratarInstrutor(_ instrutor: Instrutor) {
@@ -36,14 +32,14 @@ class Academia {
         }
     }
 
-    func matricularAluno(nome: String, email: String, matricula: String, plano: Plano) -> Aluno {
-        var novoAluno = Aluno(nome: nome, email: email, matricula: matricula, plano: plano)
+    func matricularAluno(nome: String, email: String, matricula: String, nivel: NivelAluno, plano: Plano) -> Aluno {
+        let novoAluno = Aluno(nome: nome, email: email, matricula: matricula, nivel: nivel, plano: plano)
         matricularAluno(novoAluno)
         return novoAluno
     }
 
     func buscarAluno(porMatricula matricula: String) -> Aluno? {
-        if (alunosMatriculados.keys.contains(aluno.matricula)) {
+        if (alunosMatriculados.keys.contains(matricula)) {
             return alunosMatriculados[matricula]
         } else {
             return nil
@@ -58,6 +54,7 @@ class Academia {
             let listaOrdenada = alunosMatriculados.values.sorted {$0.nome < $1.nome}
             for aluno in listaOrdenada {
                 print(aluno.getDescricao())
+            }
         }
         print("------------------------------------")
     }
