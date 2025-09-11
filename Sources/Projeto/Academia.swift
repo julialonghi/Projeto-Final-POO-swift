@@ -1,11 +1,11 @@
 import Foundation
 
 class Academia {
-    private let nome: String
-    private var alunosMatriculados: [String: Aluno] = [:]
-    private var instrutoresContratados: [String: Instrutor] = [:]
-    private var aparelhos: [Aparelho] = []
-    private var aulasDisponiveis: [Aula] = []
+    let nome: String
+    private(set) var alunosMatriculados: [String: Aluno] = [:]
+    private(set) var instrutoresContratados: [String: Instrutor] = [:]
+    private(set) var aparelhos: [Aparelho] = []
+    private(set) var aulasDisponiveis: [Aula] = []
 
     init(nome: String) {
         self.nome = nome

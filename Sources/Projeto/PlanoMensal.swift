@@ -1,7 +1,7 @@
 import Foundation
 
 class PlanoMensal: Plano {
-    init() {
+    override init(nome: String) {
         super.init(nome: "Plano Mensal")
     }
 

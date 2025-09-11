@@ -1,5 +1,11 @@
 import Foundation
 
+enum NivelAluno {
+    case iniciante 
+    case intermediario
+    case avancado
+}
+
 class Aula {
     var nome: String
     var instrutor: Instrutor
