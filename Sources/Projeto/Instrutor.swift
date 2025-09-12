@@ -9,6 +9,6 @@ class Instrutor: Pessoa {
     }
 
     override func getDescricao() -> String {
-        return super.getDescricao() + "Especialidade: \(especialidade)"
+        return super.getDescricao() + ", Especialidade: \(especialidade)"
     }
 }

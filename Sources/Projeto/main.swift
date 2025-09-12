@@ -47,3 +47,20 @@ for pessoa in listaPessoas {
     print(pessoa.getDescricao())
 }
 
+extension Academia {
+    func gerarRelatorio() -> (totalAlunos: Int, totalInstrutores: Int, totalAulas: Int) {
+        return (
+        totalAlunos: alunosMatriculados.count,
+        totalInstrutores: instrutoresContratados.count,
+        totalAulas: aulasDisponiveis.count
+        )
+    }
+}
+
+var relatorio = academia.gerarRelatorio()
+
+print("\n--- Relatório da Academia ---")
+print("Total de Alunos: \(relatorio.totalAlunos)")
+print("Total de Instrutores: \(relatorio.totalInstrutores)")
+print("Total de Aulas: \(relatorio.totalAulas)")
+print("-----------------------------")

@@ -10,26 +10,22 @@ class AulaColetiva: Aula {
     }
 
     func inscrever(_ aluno: Aluno) -> Bool {
-        if (alunosInscritos.count >= capacidadeMaxima) {
+        if alunosInscritos.count >= capacidadeMaxima {
             print("Aula lotada")
-            return false 
-        } else {
-            print("Aula com vaga")
-            print(alunosInscritos)
-            return true
+            return false
         }
-        if (alunosInscritos.keys.contains(aluno.matricula)) {
+        if alunosInscritos.keys.contains(aluno.matricula) {
             print("Aluno já está inscrito")
             return false
-        } else {
-            alunosInscritos[aluno.matricula] = aluno
-            print("Aluno adicionado com sucesso!")
-            return true
         }
+        alunosInscritos[aluno.matricula] = aluno
+        print("Aluno adicionado com sucesso!")
+        print(alunosInscritos)
+        return true
     }
 
     override func getDescricao() -> String {
-        return super.getDescricao() + "Número de vagas: \((alunosInscritos.count)-capacidadeMaxima) Capacidade da Turma: \(capacidadeMaxima)"
+        return super.getDescricao() + ", Número de vagas: \(capacidadeMaxima-(alunosInscritos.count)), Capacidade da Turma: \(capacidadeMaxima)"
     }
 
 }

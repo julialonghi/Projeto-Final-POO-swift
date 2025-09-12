@@ -28,7 +28,7 @@ class Academia {
             print("Erro: Aluno com a matrícula \(aluno.matricula) já existe")
         } else {
             alunosMatriculados[aluno.matricula] = aluno
-            print("Aluno adicionado com sucesso!")
+            print("Aluno matriculado com sucesso!")
         }
     }
 
@@ -47,7 +47,7 @@ class Academia {
     }
 
     func listarAlunos() {
-        print("--- Lista de Alunos Matriculados ---")
+        print("\n--- Lista de Alunos Matriculados ---")
         if (alunosMatriculados.isEmpty) {
             print("Nenhum aluno matriculado")
         } else {
@@ -60,7 +60,7 @@ class Academia {
     }
 
     func listarAulas() {
-        print("--- Lista de Aulas ---")
+        print("\n--- Lista de Aulas ---")
         if (aulasDisponiveis.isEmpty) {
             print("Nenhuma aula disponível.")
         } else {

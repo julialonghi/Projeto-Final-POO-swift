@@ -16,6 +16,6 @@ class Aula {
     }
 
     func getDescricao() -> String {
-        return "Nome da aula: \(nome) Nome do instrutor: \(instrutor.nome)"
+        return "Nome da aula: \(nome), Nome do instrutor: \(instrutor.nome)"
     }
 }
