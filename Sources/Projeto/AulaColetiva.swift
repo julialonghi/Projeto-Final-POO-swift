@@ -19,8 +19,8 @@ class AulaColetiva: Aula {
             return false
         }
         alunosInscritos[aluno.matricula] = aluno
+        print("O aluno \(aluno.nome), com Matricula: \(aluno.matricula).")
         print("Aluno adicionado com sucesso!")
-        print(alunosInscritos)
         return true
     }
 

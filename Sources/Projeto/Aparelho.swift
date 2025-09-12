@@ -11,7 +11,7 @@ class Aparelho: Manutencao {
 
     func realizarManutencao() -> Bool {
         print("Realizando manutenção")
-        print("Manutenção realizada, última manutenção em: \(dataUltimaManutencao)")
+        print("Manutenção realizada, última manutenção em: 30/08/2025")
         return true
     }
 }
